@@ -1,0 +1,20 @@
+{
+    "name": "intriro/clock",
+    "description": "A simple wrapper for abstracting the system date",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "alsar",
+            "email": "ales@intriro.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Intriro\\Clock\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0"
+    }
+}
