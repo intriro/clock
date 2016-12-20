@@ -7,7 +7,7 @@ class SystemClock implements Clock
     /**
      * {@inheritdoc}
      */
-    public function getCurrentDateTime()
+    public function getCurrentDateTime(): \DateTimeImmutable
     {
         return new \DateTimeImmutable('now');
     }

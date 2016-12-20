@@ -7,5 +7,5 @@ interface Clock
     /**
      * @return \DateTimeImmutable
      */
-    public function getCurrentDateTime();
+    public function getCurrentDateTime(): \DateTimeImmutable;
 }

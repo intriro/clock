@@ -20,7 +20,7 @@ class FixedClock implements Clock
     /**
      * @return FixedClock
      */
-    public static function fromNow()
+    public static function fromNow(): self
     {
         return new self(new \DateTimeImmutable());
     }
@@ -30,7 +30,7 @@ class FixedClock implements Clock
      *
      * @return FixedClock
      */
-    public static function fromDateTimeString(string $format)
+    public static function fromDateTimeString(string $format): self
     {
         return new self(new \DateTimeImmutable($format));
     }
@@ -38,7 +38,7 @@ class FixedClock implements Clock
     /**
      * {@inheritdoc}
      */
-    public function getCurrentDateTime()
+    public function getCurrentDateTime(): \DateTimeImmutable
     {
         return $this->fixedDateTime;
     }
