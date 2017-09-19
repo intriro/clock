@@ -7,8 +7,8 @@ A simple clock abstraction library for PHP.
 The problem with DateTime instances is that they are not testable and mockable. They always rely on the system date and
 time. Therefore you should never directly create DateTime instances.
 
-With the Clock interface you are able to switch implementations and therefore have control over the returned
-DateTime instances.
+With the Clock interface you are able to switch implementations and therefore have control over the returned DateTime
+instances.
 
 
 # Installation
@@ -23,11 +23,13 @@ composer require intriro/clock
 The `Clock` object provides access to the current date and time. Basically it is just a object which returns a
 DateTimeImmutable instance that represents the current date and time.
 
-With a Clock object you can always swap implementations and get DateTimeImmutable instances which don't rely on the system time.
+With a Clock interface you can always swap implementations and get DateTimeImmutable instances which don't rely on the
+system time.
 
 The library ships with a `Clock` interface and three implementations.
 
-`SystemClock` gives you access to the system date and time. It just returns `new DateTimeImmutable('now')` and it's the default implementation.
+`SystemClock` gives you access to the system date and time. It just returns `new DateTimeImmutable('now')` and it's the
+default implementation.
 
 `ShiftedSystemClock` returns the system date and time that is shifted for a provided interval.
 
