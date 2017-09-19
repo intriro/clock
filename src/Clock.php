@@ -2,10 +2,12 @@
 
 namespace Intriro\Clock;
 
+use DateTimeImmutable;
+
 interface Clock
 {
     /**
-     * @return \DateTimeImmutable
+     * @return DateTimeImmutable
      */
-    public function getCurrentDateTime(): \DateTimeImmutable;
+    public function getCurrentDateTime(): DateTimeImmutable;
 }

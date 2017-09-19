@@ -2,17 +2,19 @@
 
 namespace Intriro\Clock;
 
+use DateTimeImmutable;
+
 class FixedClock implements Clock
 {
     /**
-     * @var \DateTimeImmutable
+     * @var DateTimeImmutable
      */
     protected $fixedDateTime;
 
     /**
-     * @param \DateTimeImmutable $dateTime
+     * @param DateTimeImmutable $dateTime
      */
-    public function __construct(\DateTimeImmutable $dateTime)
+    public function __construct(DateTimeImmutable $dateTime)
     {
         $this->fixedDateTime = $dateTime;
     }
@@ -22,7 +24,7 @@ class FixedClock implements Clock
      */
     public static function fromNow(): self
     {
-        return new self(new \DateTimeImmutable());
+        return new self(new DateTimeImmutable());
     }
 
     /**
@@ -32,22 +34,14 @@ class FixedClock implements Clock
      */
     public static function fromDateTimeString(string $format): self
     {
-        return new self(new \DateTimeImmutable($format));
+        return new self(new DateTimeImmutable($format));
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getCurrentDateTime(): \DateTimeImmutable
+    public function getCurrentDateTime(): DateTimeImmutable
     {
         return $this->fixedDateTime;
-    }
-
-    /**
-     * @param \DateTimeImmutable $dateTime
-     */
-    public function setDateTime(\DateTimeImmutable $dateTime)
-    {
-        $this->fixedDateTime = $dateTime;
     }
 }
