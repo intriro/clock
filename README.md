@@ -48,7 +48,7 @@ class Event
 
     public function hasPassed(Clock $clock): bool
     {
-        if ($this->clock->getCurrentDateTime() > $this->date) {
+        if ($this->clock->now() > $this->date) {
             return true;
         }
         
