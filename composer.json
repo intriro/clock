@@ -9,12 +9,17 @@
             "email": "ales@intriro.com"
         }
     ],
+    "require": {
+        "php": ">=7.0"
+    },
     "autoload": {
         "psr-4": {
             "Intriro\\Clock\\": "src/"
         }
     },
-    "require": {
-        "php": ">=7.0"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
     }
 }
