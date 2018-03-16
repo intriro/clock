@@ -6,10 +6,12 @@ use DateTimeImmutable;
 
 class SystemClock implements Clock
 {
+    use CurrentDateTimeTrait;
+
     /**
      * {@inheritdoc}
      */
-    public function getCurrentDateTime(): DateTimeImmutable
+    public function now(): DateTimeImmutable
     {
         return new DateTimeImmutable('now');
     }

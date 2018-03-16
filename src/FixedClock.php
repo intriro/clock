@@ -6,6 +6,8 @@ use DateTimeImmutable;
 
 class FixedClock implements Clock
 {
+    use CurrentDateTimeTrait;
+
     /**
      * @var DateTimeImmutable
      */
@@ -40,7 +42,7 @@ class FixedClock implements Clock
     /**
      * {@inheritdoc}
      */
-    public function getCurrentDateTime(): DateTimeImmutable
+    public function now(): DateTimeImmutable
     {
         return $this->fixedDateTime;
     }

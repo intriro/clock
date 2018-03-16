@@ -7,6 +7,8 @@ use DateTimeImmutable;
 
 class ShiftedSystemClock extends SystemClock
 {
+    use CurrentDateTimeTrait;
+
     /**
      * @var DateInterval
      */
@@ -23,8 +25,8 @@ class ShiftedSystemClock extends SystemClock
     /**
      * {@inheritdoc}
      */
-    public function getCurrentDateTime(): DateTimeImmutable
+    public function now(): DateTimeImmutable
     {
-        return parent::getCurrentDateTime()->add($this->interval);
+        return parent::now()->add($this->interval);
     }
 }
