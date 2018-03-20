@@ -6,6 +6,7 @@ namespace Intriro\Clock;
 
 use DateInterval;
 use DateTimeImmutable;
+use DateTimeZone;
 
 class ShiftedSystemClock extends SystemClock
 {
@@ -14,19 +15,15 @@ class ShiftedSystemClock extends SystemClock
     /**
      * @var DateInterval
      */
-    private $interval;
+    protected $interval;
 
-    /**
-     * @param string $string
-     */
-    public function __construct(string $string)
+    public function __construct(string $string, DateTimeZone $timezone = null)
     {
+        parent::__construct($timezone);
+
         $this->interval = DateInterval::createFromDateString($string);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function now(): DateTimeImmutable
     {
         return parent::now()->add($this->interval);

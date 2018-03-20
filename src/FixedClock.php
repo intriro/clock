@@ -15,35 +15,21 @@ class FixedClock implements Clock
      */
     protected $fixedDateTime;
 
-    /**
-     * @param DateTimeImmutable $dateTime
-     */
     public function __construct(DateTimeImmutable $dateTime)
     {
         $this->fixedDateTime = $dateTime;
     }
 
-    /**
-     * @return FixedClock
-     */
-    public static function fromNow(): self
+    public static function fromNow(DateTimeZone $timezone = null): self
     {
-        return new self(new DateTimeImmutable());
+        return new self(new DateTimeImmutable('now', $timezone));
     }
 
-    /**
-     * @param string $format
-     *
-     * @return FixedClock
-     */
-    public static function fromDateTimeString(string $format): self
+    public static function fromDateTimeString(string $format, DateTimeZone $timezone = null): self
     {
-        return new self(new DateTimeImmutable($format));
+        return new self(new DateTimeImmutable($format, $timezone));
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function now(): DateTimeImmutable
     {
         return $this->fixedDateTime;
