@@ -10,8 +10,6 @@ use DateTimeZone;
 
 class ShiftedSystemClock extends SystemClock
 {
-    use CurrentDateTimeTrait;
-
     /**
      * @var DateInterval
      */

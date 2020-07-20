@@ -9,8 +9,6 @@ use DateTimeZone;
 
 class SystemClock implements Clock
 {
-    use CurrentDateTimeTrait;
-
     /**
      * @var DateTimeZone
      */

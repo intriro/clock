@@ -8,8 +8,6 @@ use DateTimeImmutable;
 
 class FixedClock implements Clock
 {
-    use CurrentDateTimeTrait;
-
     /**
      * @var DateTimeImmutable
      */
