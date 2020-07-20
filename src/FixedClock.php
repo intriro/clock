@@ -5,13 +5,11 @@ declare(strict_types=1);
 namespace Intriro\Clock;
 
 use DateTimeImmutable;
+use DateTimeZone;
 
 class FixedClock implements Clock
 {
-    /**
-     * @var DateTimeImmutable
-     */
-    protected $fixedDateTime;
+    protected DateTimeImmutable $fixedDateTime;
 
     public function __construct(DateTimeImmutable $dateTime)
     {

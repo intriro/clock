@@ -10,10 +10,7 @@ use DateTimeZone;
 
 class ShiftedSystemClock extends SystemClock
 {
-    /**
-     * @var DateInterval
-     */
-    protected $interval;
+    protected DateInterval $interval;
 
     public function __construct(string $string, DateTimeZone $timezone = null)
     {
